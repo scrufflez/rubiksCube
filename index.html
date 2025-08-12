@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!--
+README:
+Open this file in a browser to view the interactive Rubik's Cube.
+Controls:
+- Scramble: randomize cube
+- Solve: compute solution and animate
+- Reset: return to solved state
+- Undo: undo last move
+- Step: step through queued moves
+- Play/Pause: play or pause move queue
+- Speed: adjust animation speed
+Keyboard shortcuts listed in buttons (e.g., R, Shift+R = R')
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rubik's Cube</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="app">
+    <div id="scene" aria-label="3D cube" role="application"></div>
+    <div id="controls">
+      <button id="scrambleBtn" aria-label="Scramble (S)">Scramble</button>
+      <button id="solveBtn" aria-label="Solve (V)">Solve</button>
+      <button id="resetBtn" aria-label="Reset (R)">Reset</button>
+      <button id="undoBtn" aria-label="Undo (Backspace)">Undo</button>
+      <button id="stepBtn" aria-label="Step (.)">Step</button>
+      <button id="playBtn" aria-label="Play/Pause (Space)">Play</button>
+      <label>Speed
+        <input type="range" id="speedSlider" min="0.25" max="3" step="0.25" value="1" />
+      </label>
+    </div>
+    <pre id="log" aria-label="Notation log"></pre>
+    <div id="status" role="status" aria-live="polite"></div>
+    <button id="testsBtn">Run Tests</button>
+  </div>
+  <script type="module" src="main.js"></script>
+  <script type="module" src="tests.js"></script>
+</body>
+</html>
