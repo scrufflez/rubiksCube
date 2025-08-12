@@ -57,12 +57,14 @@ export class Cube {
           this.cubies.push(mesh);
         }
       }
+    }
+  }
+
   update(dt){
     if(this.isAnimating) this._animate(dt);
     else if(!this.paused) this._next();
     this.controls.update();
     this.renderer.render(this.scene,this.camera);
-  }
   }
 
   play(){this.paused=false;}
